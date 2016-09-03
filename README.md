@@ -3,3 +3,6 @@
 * Author: Yu-Pai Liu 偵錯桐人-電腦、遊戲、隨筆
 * Url: <https://tedliou.com>
 
+## Download
+* Source Code: [Click Me！](https://github.com/tedliou/RandomValue/archive/master.zip)
+
