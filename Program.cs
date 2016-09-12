@@ -13,23 +13,16 @@ namespace Random_Value
          * */
         static void Main(string[] args)
         {
-            /*  取得設定參數
-             * 
-             *  Max = 最大值
-             *  Min = 最小值
-             *  A = 個數
-             * 
-             * */
-            string max, min, a;
+            int max, min, n;
 
             Console.Write(">> 最大值： ");
-            max = Console.ReadLine();
+            max = int.Parse(Console.ReadLine());
 
             Console.Write(">> 最小值： ");
-            min = Console.ReadLine();
+            min = int.Parse(Console.ReadLine());
 
             Console.Write(">> 個數： ");
-            a = Console.ReadLine();
+            n = int.Parse(Console.ReadLine());
 
             //  分隔線
             Console.WriteLine("////////////////////////////////////////////////");
@@ -37,28 +30,18 @@ namespace Random_Value
             //  實體化Random類別
             Random rnd = new Random();
 
-            //  將取到的字串轉為數值格式
-            int small, large, number;
-            number = int.Parse(a);
-            small = int.Parse(min);
-            large = int.Parse(max) + 1;
-
             //  宣告用來儲存亂數的陣列
-            int[] ValueString = new int[number];
+            int[] ValueString = new int[n];
 
-            ///////////////////////////////////////
-            //             
             //  亂數產生
-            //      
-            //////////////////////////////////////
-            for (int i = 0; i < number; i++)
+            for (int i = 0; i < n; i++)
             {
-                ValueString[i] = rnd.Next(small, large);
+                ValueString[i] = rnd.Next(min, max+1);
 
                 //  檢查是否存在重複
                 while (Array.IndexOf(ValueString, ValueString[i], 0, i) > -1)
                 {
-                    ValueString[i] = rnd.Next(small, large);
+                    ValueString[i] = rnd.Next(min, max + 1);
                 }
 
                 //  排版
